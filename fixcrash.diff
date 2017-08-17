@@ -1,8 +1,8 @@
 diff --git a/xbmc/network/upnp/UPnPServer.cpp b/xbmc/network/upnp/UPnPServer.cpp
 index de879ff..92feb82 100644
---- a/xbmc/network/upnp/UPnPServer.cpp
+
 +++ b/xbmc/network/upnp/UPnPServer.cpp
-@@ -983,6 +983,11 @@ static NPT_String TranslateWMPObjectId(NPT_String id)
+@@ -983,6 +983,11@@ static NPT_String TranslateWMPObjectId(NPT_String id)
          return NPT_SUCCESS;
      }
  

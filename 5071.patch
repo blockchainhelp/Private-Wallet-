@@ -11,7 +11,6 @@ Subject: [PATCH 01/19] Added initial Files.AddSource to JSON-RPC
 
 diff --git a/xbmc/interfaces/json-rpc/FileOperations.cpp b/xbmc/interfaces/json-rpc/FileOperations.cpp
 index 50e74e1..8eb7d3f 100644
---- a/xbmc/interfaces/json-rpc/FileOperations.cpp
 +++ b/xbmc/interfaces/json-rpc/FileOperations.cpp
 @@ -227,6 +227,40 @@ JSONRPC_STATUS CFileOperations::Download(const std::string &method, ITransportLa
    return transport->Download(parameterObject["path"].asString().c_str(), result) ? OK : InvalidParams;

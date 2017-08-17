@@ -4,8 +4,7 @@ Date: Tue, 22 Jul 2014 21:33:39 +0200
 Subject: [PATCH 01/19] Added initial Files.AddSource to JSON-RPC
 
 ---
- xbmc/interfaces/json-rpc/FileOperations.cpp        | 34 ++++++++++++++++++++++
- xbmc/interfaces/json-rpc/FileOperations.h          |  2 ++
+ 
  .../interfaces/json-rpc/JSONServiceDescription.cpp |  1 +
  xbmc/interfaces/json-rpc/schema/methods.json       | 14 ++++++++-
  4 files changed, 50 insertions(+), 1 deletion(-)
@@ -65,11 +64,7 @@ index 25f01b5..7827815 100644
  
 +    static JSONRPC_STATUS AddSource(const std::string &method, ITransportLayer *transport, IClient *client, const CVariant &parameterObject, CVariant &result);
 +
-     static bool FillFileItem(const CFileItemPtr &originalItem, CFileItemPtr &item, std::string media = "", const CVariant &parameterObject = CVariant(CVariant::VariantTypeArray));
-     static bool FillFileItemList(const CVariant &parameterObject, CFileItemList &list);
-   };
-diff --git a/xbmc/interfaces/json-rpc/JSONServiceDescription.cpp b/xbmc/interfaces/json-rpc/JSONServiceDescription.cpp
-index ec889f3..d81ce93 100644
+   ..d81ce93 100644
 --- a/xbmc/interfaces/json-rpc/JSONServiceDescription.cpp
 +++ b/xbmc/interfaces/json-rpc/JSONServiceDescription.cpp
 @@ -98,6 +98,7 @@ JsonRpcMethodMap CJSONServiceDescription::m_methodMaps[] = {
@@ -121,11 +116,6 @@ index 8eb7d3f..8bdeb70 100644
 @@ -230,35 +230,24 @@ JSONRPC_STATUS CFileOperations::Download(const std::string &method, ITransportLa
  JSONRPC_STATUS CFileOperations::AddSource(const std::string &method, ITransportLayer *transport, IClient *client, const CVariant &parameterObject, CVariant &result)
  {
-   std::string media = parameterObject["media"].asString();
--  std::string initalName = parameterObject["name"].asString();
-+  std::string name = parameterObject["name"].asString();
-   std::string directory = parameterObject["directory"].asString();
--  StringUtils::ToLower(media);
  
    std::vector<std::string> paths;
    paths.push_back(directory);

@@ -2,4 +2,4 @@
 nodaemon=true
 
 [program:kodi-server]
-command=/opt/kodi-server/lib/kodi/kodi.bin --headless --no-test --nolirc -p
+command=/opt/kodi-server/lib//kodi.bin --headless --no-test --nolirc -p
